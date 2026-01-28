@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advantium Confort Drive | Premium Safari & City Vehicle Rentals</title>
+  <meta name="description" content="Book premium vehicles in Kenya with Advantium Confort Drive. Safari vans, Land Cruisers, Land Rover Defenders, and Toyota Rav4 for city or safari trips.">
+  <meta name="keywords" content="Kenya, vehicle rental, safari, city drive, Land Cruiser, Toyota Rav4, Land Rover Defender">
+  <meta name="author" content="Advantium Confort Drive">
+  
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="Advantium Confort Drive | Premium Vehicle Rentals">
+  <meta property="og:description" content="Book premium vehicles in Kenya for safari or city trips. Comfort and reliability guaranteed.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="LOG.png">
+  <meta property="og:url" content="https://www.advantiumconfortdrive.com">
+
+  <!-- Structured Data (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CarRental",
+    "name": "Advantium Confort Drive",
+    "image": "LOG.png",
+    "telephone": "+254722606631",
+    "email": "advantiumlimited@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "url": "https://www.advantiumconfortdrive.com"
+  }
+  </script>
+
+  <style>
+    /* General Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    
+    body { line-height: 1.6; color: #333; }
+
+    /* Hero Section */
+    .hero-section { position: relative; height: 60vh; display: flex; justify-content: center; align-items: center; color: #fff; text-align: center; overflow: hidden; }
+    .hero-section video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+    .logo-overlay { position: absolute; top: 20px; left: 20px; z-index: 2; }
+    .logo-overlay img { width: 120px; }
+    .hero-text h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); }
+    .hero-text p { margin-bottom: 15px; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); }
+    .hero-text button { padding: 10px 20px; background: #28a745; border: none; color: #fff; cursor: pointer; border-radius: 5px; font-size: 1rem; }
+
+    /* Vehicle Grid */
+    .grid { padding: 30px; display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+    .vehicle-card { border: 1px solid #ddd; padding: 15px; border-radius: 10px; text-align: center; background: #fff; }
+    .vehicle-card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+    .vehicle-card button { background: #007bff; color: #fff; border: none; padding: 8px 12px; cursor: pointer; border-radius: 5px; margin: 5px 0; display: block; width: 80%; }
+
+    /* Footer */
+    footer { background: #222; color: #fff; padding: 25px; text-align: center; margin-top: 40px; }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: #fff; padding: 12px 18px; border-radius: 50px; display: flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 999; font-weight: bold; }
+    .whatsapp-float:hover { background-color: #1ebe5d; }
+    @media (max-width: 600px) { .whatsapp-float span { display: none; } }
+
+    /* Booking Form Modal */
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); }
+    .modal-content { background: #fff; margin: 10% auto; padding: 20px; border-radius: 10px; max-width: 500px; position: relative; }
+    .close { position: absolute; top: 10px; right: 15px; font-size: 28px; font-weight: bold; color: #333; cursor: pointer; }
+    .modal-content h2 { margin-bottom: 15px; }
+    .modal-content input, .modal-content select, .modal-content textarea { width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    .modal-content button { background: #28a745; color: #fff; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%; }
+
+  </style>
+</head>
+
+<body>
+
+<header class="hero-section">
+  <div class="logo-overlay">
+    <img src="LOG.png" alt="Advantium Confort Drive Logo">
+  </div>
+
+  <video autoplay muted loop playsinline>
+    <source src="videos of Kenya.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-text">
+    <h1>ADVANTIUM CONFORT DRIVE</h1>
+    <p>Comfort • Reliability • Premium Safari & City Drives</p>
+    <button onclick="scrollToVehicles()">See Vehicles</button>
+  </div>
+</header>
+
+<section id="vehicles" class="grid">
+  <!-- Vehicle Card Template -->
+  <div class="vehicle-card">
+    <img src="safari tour van.png" alt="Safari Tour Van">
+    <h3>Safari Tour Van</h3>
+    <p>Ideal for group tours.</p>
+    <button onclick="openBookingForm('Safari Tour Van')">Book Now</button>
+    <button onclick="callNumber('+254722606631')">Call</button>
+    <button onclick="emailNow('Safari Tour Van')">Email</button>
+  </div>
+
+  <div class="vehicle-card">
+    <img src="land cruiser v8.png" alt="Land Cruiser V8">
+    <h3>Land Cruiser V8</h3>
+    <p>Rugged safari luxury.</p>
+    <button onclick="openBookingForm('Land Cruiser V8')">Book Now</button>
+    <button onclick="callNumber('+254722606631')">Call</button>
+    <button onclick="emailNow('Land Cruiser V8')">Email</button>
+  </div>
+
+  <div class="vehicle-card">
+    <img src="Toyota Rav4.png" alt="Toyota Rav4">
+    <h3>Toyota Rav4</h3>
+    <p>Economical & reliable.</p>
+    <button onclick="openBookingForm('Toyota Rav4')">Book Now</button>
+    <button onclick="callNumber('+254722606631')">Call</button>
+    <button onclick="emailNow('Toyota Rav4')">Email</button>
+  </div>
+
+  <div class="vehicle-card">
+    <img src="land rover defender.png" alt="Land Rover Defender">
+    <h3>Land Rover Defender</h3>
+    <p>Deep safari exploration.</p>
+    <button onclick="openBookingForm('Land Rover Defender')">Book Now</button>
+    <button onclick="callNumber('+254722606631')">Call</button>
+    <button onclick="emailNow('Land Rover Defender')">Email</button>
+  </div>
+</section>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeBookingForm()">&times;</span>
+    <h2>Book Vehicle</h2>
+    <form id="bookingForm" target="_blank" method="GET">
+      <input type="text" id="customerName" name="customerName" placeholder="Your Name" required>
+      <input type="email" id="customerEmail" name="customerEmail" placeholder="Your Email" required>
+      <input type="tel" id="customerPhone" name="customerPhone" placeholder="Your Phone Number" required>
+      <input type="text" id="vehicleName" name="vehicleName" readonly>
+      <textarea id="customerMessage" name="customerMessage" placeholder="Any special requests?" rows="3"></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p><strong>ADVANTIUM CONFORT DRIVE</strong></p>
+  <p>Nairobi, Kenya</p>
+  <p>
+    📞 <a href="tel:+254722606631" style="color:#fff;">+254 722 606631</a> |
+    <a href="tel:+254712654164" style="color:#fff;">+254 712 654164</a>
+  </p>
+  <p>
+    📧 <a href="mailto:advantiumlimited@gmail.com" style="color:#fff;">
+      advantiumlimited@gmail.com
+    </a>
+  </p>
+</footer>
+
+<a id="whatsappBtn" class="whatsapp-float" target="_blank">
+  <span>Chat with us</span>
+</a>
+
+<script>
+  const phonePrimary = "254722606631";
+  const email = "advantiumlimited@gmail.com";
+
+  function scrollToVehicles() {
+    document.getElementById("vehicles").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function callNumber(number) {
+    window.location.href = `tel:${number}`;
+  }
+
+  function emailNow(vehicle) {
+    const subject = `Booking Inquiry: ${vehicle}`;
+    const body = `Hello Advantium Confort Drive, I would like to inquire about booking the ${vehicle}.`;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  // WhatsApp button
+  document.getElementById("whatsappBtn").href = 
+    `https://wa.me/${phonePrimary}?text=${encodeURIComponent("Hello Advantium Confort Drive, I would like to inquire about vehicle booking.")}`;
+
+  // Booking Form Modal
+  const modal = document.getElementById("bookingModal");
+  const form = document.getElementById("bookingForm");
+  const vehicleInput = document.getElementById("vehicleName");
+
+  function openBookingForm(vehicle) {
+    vehicleInput.value = vehicle;
+    modal.style.display = "block";
+    // Optional: connect to Google Forms
+    // form.action = `https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse?entry.123456=${encodeURIComponent(vehicle)}`;
+  }
+
+  function closeBookingForm() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Submit form redirects to WhatsApp as an example
+  form.onsubmit = function(e) {
+    e.preventDefault();
+    const message = `Hello Advantium Confort Drive, I would like to book the ${vehicleInput.value}. Name: ${form.customerName.value}, Email: ${form.customerEmail.value}, Phone: ${form.customerPhone.value}, Message: ${form.customerMessage.value}`;
+    window.open(`https://wa.me/${phonePrimary}?text=${encodeURIComponent(message)}`, "_blank");
+    modal.style.display = "none";
+  }
+</script>
+
+</body>
+</html>
