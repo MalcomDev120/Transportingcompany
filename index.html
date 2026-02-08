@@ -1,220 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advantium Confort Drive | Premium Safari & City Vehicle Rentals</title>
-  <meta name="description" content="Book premium vehicles in Kenya with Advantium Confort Drive. Safari vans, Land Cruisers, Land Rover Defenders, and Toyota Rav4 for city or safari trips.">
-  <meta name="keywords" content="Kenya, vehicle rental, safari, city drive, Land Cruiser, Toyota Rav4, Land Rover Defender">
-  <meta name="author" content="Advantium Confort Drive">
-  
-  <!-- Open Graph for Social Sharing -->
-  <meta property="og:title" content="Advantium Confort Drive | Premium Vehicle Rentals">
-  <meta property="og:description" content="Book premium vehicles in Kenya for safari or city trips. Comfort and reliability guaranteed.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="LOG.png">
-  <meta property="og:url" content="https://www.advantiumconfortdrive.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advantium Confort Drive | Premium Safari & City Vehicle Rentals</title>
 
-  <!-- Structured Data (JSON-LD) for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CarRental",
-    "name": "Advantium Confort Drive",
-    "image": "LOG.png",
-    "telephone": "+254722606631",
-    "email": "advantiumlimited@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Nairobi",
-      "addressCountry": "KE"
-    },
-    "url": "https://www.advantiumconfortdrive.com"
+<style>
+/* ===== GLOBAL ===== */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Make all images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 10;
+}
+.navbar a {
+  color: #fff;
+  margin-left: 18px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar a:hover { text-decoration: underline; }
+
+/* ===== HERO ===== */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+}
+.logo-overlay img {
+  height: 60px;
+}
+.hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  text-align: center;
+  padding: 20px;
+}
+.hero-text h1 { font-size: 40px; }
+.hero-text button {
+  padding: 12px 25px;
+  border: none;
+  background: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ===== SLIDER ===== */
+.slider {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 25px 0;
+}
+.slides {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  animation: slide 16s infinite;
+}
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@keyframes slide {
+  0% { margin-left: 0; }
+  25% { margin-left: -100%; }
+  50% { margin-left: -200%; }
+  75% { margin-left: -300%; }
+}
+
+/* ===== VEHICLES ===== */
+.vehicle { margin-bottom: 25px; }
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+.lightbox span {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== CONTACT FORM ===== */
+form {
+  max-width: 500px;
+}
+input, textarea, button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+button {
+  background: #28a745;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .navbar {
+    top: 70px;
+    right: 20px;
   }
-  </script>
-
-  <style>
-    /* General Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    
-    body { line-height: 1.6; color: #333; }
-
-    /* Hero Section */
-    .hero-section { position: relative; height: 60vh; display: flex; justify-content: center; align-items: center; color: #fff; text-align: center; overflow: hidden; }
-    .hero-section video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-    .logo-overlay { position: absolute; top: 20px; left: 20px; z-index: 2; }
-    .logo-overlay img { width: 120px; }
-    .hero-text h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); }
-    .hero-text p { margin-bottom: 15px; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); }
-    .hero-text button { padding: 10px 20px; background: #28a745; border: none; color: #fff; cursor: pointer; border-radius: 5px; font-size: 1rem; }
-
-    /* Vehicle Grid */
-    .grid { padding: 30px; display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
-    .vehicle-card { border: 1px solid #ddd; padding: 15px; border-radius: 10px; text-align: center; background: #fff; }
-    .vehicle-card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
-    .vehicle-card button { background: #007bff; color: #fff; border: none; padding: 8px 12px; cursor: pointer; border-radius: 5px; margin: 5px 0; display: block; width: 80%; }
-
-    /* Footer */
-    footer { background: #222; color: #fff; padding: 25px; text-align: center; margin-top: 40px; }
-
-    /* WhatsApp Floating Button */
-    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: #fff; padding: 12px 18px; border-radius: 50px; display: flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 999; font-weight: bold; }
-    .whatsapp-float:hover { background-color: #1ebe5d; }
-    @media (max-width: 600px) { .whatsapp-float span { display: none; } }
-
-    /* Booking Form Modal */
-    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); }
-    .modal-content { background: #fff; margin: 10% auto; padding: 20px; border-radius: 10px; max-width: 500px; position: relative; }
-    .close { position: absolute; top: 10px; right: 15px; font-size: 28px; font-weight: bold; color: #333; cursor: pointer; }
-    .modal-content h2 { margin-bottom: 15px; }
-    .modal-content input, .modal-content select, .modal-content textarea { width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; }
-    .modal-content button { background: #28a745; color: #fff; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%; }
-
-  </style>
+  .hero-text h1 {
+    font-size: 28px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header class="hero-section">
+<!-- ===== HERO ===== -->
+<header class="hero-section" id="home">
   <div class="logo-overlay">
-    <img src="LOG.png" alt="Advantium Confort Drive Logo">
+    <img src="log4.png" alt="Logo">
   </div>
 
-  <video autoplay muted loop playsinline>
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#vehicles">Vehicles</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <video autoplay muted loop>
     <source src="videos of Kenya.mp4" type="video/mp4">
   </video>
 
   <div class="hero-text">
     <h1>ADVANTIUM CONFORT DRIVE</h1>
     <p>Comfort • Reliability • Premium Safari & City Drives</p>
-    <button onclick="scrollToVehicles()">See Vehicles</button>
+    <button onclick="document.getElementById('vehicles').scrollIntoView()">See Vehicles</button>
   </div>
 </header>
 
-<section id="vehicles" class="grid">
-  <!-- Vehicle Card Template -->
-  <div class="vehicle-card">
-    <img src="safari tour van.png" alt="Safari Tour Van">
-    <h3>Safari Tour Van</h3>
-    <p>Ideal for group tours.</p>
-    <button onclick="openBookingForm('Safari Tour Van')">Book Now</button>
-    <button onclick="callNumber('+254722606631')">Call</button>
-    <button onclick="emailNow('Safari Tour Van')">Email</button>
-  </div>
+<!-- ===== ABOUT ===== -->
+<section id="about">
+<h1>About Advantium Confort Drive</h1>
+<p>Premium vehicle rental company based in Nairobi, Kenya.</p>
 
-  <div class="vehicle-card">
-    <img src="land cruiser v8.png" alt="Land Cruiser V8">
-    <h3>Land Cruiser V8</h3>
-    <p>Rugged safari luxury.</p>
-    <button onclick="openBookingForm('Land Cruiser V8')">Book Now</button>
-    <button onclick="callNumber('+254722606631')">Call</button>
-    <button onclick="emailNow('Land Cruiser V8')">Email</button>
-  </div>
+<h2>Why Choose Us?</h2>
+<ul>
+  <li>Professional & experienced drivers</li>
+  <p>Executive Chauffeur Services</p>
+  <p>Professional, well-trained drivers offering discreet and comfortable chauffeur services for executives, diplomats, and VIP clients.</p>
 
-  <div class="vehicle-card">
-    <img src="Toyota Rav4.png" alt="Toyota Rav4">
-    <h3>Toyota Rav4</h3>
-    <p>Economical & reliable.</p>
-    <button onclick="openBookingForm('Toyota Rav4')">Book Now</button>
-    <button onclick="callNumber('+254722606631')">Call</button>
-    <button onclick="emailNow('Toyota Rav4')">Email</button>
-  </div>
+  <p>Airport Transfers</p>
+  <p>Reliable pick-up and drop-off services to and from Jomo Kenyatta International Airport and Wilson Airport, ensuring punctuality and comfort.</p>
 
-  <div class="vehicle-card">
-    <img src="land rover defender.png" alt="Land Rover Defender">
-    <h3>Land Rover Defender</h3>
-    <p>Deep safari exploration.</p>
-    <button onclick="openBookingForm('Land Rover Defender')">Book Now</button>
-    <button onclick="callNumber('+254722606631')">Call</button>
-    <button onclick="emailNow('Land Rover Defender')">Email</button>
-  </div>
+  <li>Safari-ready 4x4 vehicles</li>
+
+  <p>Corporate Transport Solutions</p>
+  <p>Tailored transport services for companies, including staff transportation, business meetings, conferences, and corporate events.</p>
+
+  <p>Tour & Travel Drive Services</p>
+  <p>Comfortable transport for city tours, safari transfers, and long-distance travel across Kenya.</p>
+
+  <p>Event & Wedding Transportation</p>
+  <p>Elegant and well-maintained vehicles for weddings and special occasions.</p>
+
+  <p>Courier & Light Logistics (Optional)</p>
+  <p>Safe and timely delivery of documents and small parcels.</p>
+
+  <li>Affordable & transparent pricing</li>
+  <li>24/7 customer support</li>
+</ul>
 </section>
 
-<!-- Booking Modal -->
-<div id="bookingModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeBookingForm()">&times;</span>
-    <h2>Book Vehicle</h2>
-    <form id="bookingForm" target="_blank" method="GET">
-      <input type="text" id="customerName" name="customerName" placeholder="Your Name" required>
-      <input type="email" id="customerEmail" name="customerEmail" placeholder="Your Email" required>
-      <input type="tel" id="customerPhone" name="customerPhone" placeholder="Your Phone Number" required>
-      <input type="text" id="vehicleName" name="vehicleName" readonly>
-      <textarea id="customerMessage" name="customerMessage" placeholder="Any special requests?" rows="3"></textarea>
-      <button type="submit">Submit Booking</button>
-    </form>
+<!-- ===== VEHICLES ===== -->
+<section id="vehicles">
+<h1>Our Vehicle Fleet</h1>
+
+<div class="slider">
+  <div class="slides">
+    <img src="headsets.jpg" onclick="openLightbox(this.src)">
+    <img src="lion sleeping.png" onclick="openLightbox(this.src)">
+    <img src="confort benz.png" onclick="openLightbox(this.src)">
+    <img src="lion crossing.png" onclick="openLightbox(this.src)">
   </div>
 </div>
 
-<footer>
-  <p><strong>ADVANTIUM CONFORT DRIVE</strong></p>
-  <p>Nairobi, Kenya</p>
-  <p>
-    📞 <a href="tel:+254722606631" style="color:#fff;">+254 722 606631</a> |
-    <a href="tel:+254712654164" style="color:#fff;">+254 712 654164</a>
-  </p>
-  <p>
-    📧 <a href="mailto:advantiumlimited@gmail.com" style="color:#fff;">
-      advantiumlimited@gmail.com
-    </a>
-  </p>
-</footer>
+<div class="vehicle">
+<h3>Safari Tour Van</h3>
+<p>Perfect for group safaris and tours.</p>
+</div>
 
-<a id="whatsappBtn" class="whatsapp-float" target="_blank">
-  <span>Chat with us</span>
-</a>
+<div class="vehicle">
+<h3>Land Cruiser V8</h3>
+<p>Luxury and power for rugged terrain.</p>
+</div>
+
+<div class="vehicle">
+<h3>Toyota Rav4</h3>
+<p>Reliable for city and highway travel.</p>
+</div>
+
+<div class="vehicle">
+<h3>Land Rover Defender</h3>
+<p>Built for deep off-road adventures.</p>
+</div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+<h1>Contact Us</h1>
+<p>📍 Nairobi, Kenya</p>
+<p>📞 +254 722 606631 / +254791753995</p>
+<p>📧 advantiumlimited@gmail.com</p>
+
+<form id="contactForm">
+  <input id="name" placeholder="Your Name" required>
+  <input id="email" type="email" placeholder="Your Email" required>
+  <input id="phone" placeholder="Your Phone" required>
+  <textarea id="message" placeholder="Message"></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+<iframe src="https://www.google.com/maps?q=Nairobi,Kenya&output=embed"
+width="100%" height="300" style="border:0;"></iframe>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span onclick="closeLightbox()">×</span>
+  <img id="lightboxImg">
+</div>
 
 <script>
-  const phonePrimary = "254722606631";
-  const email = "advantiumlimited@gmail.com";
+function openLightbox(src){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightboxImg").src = src;
+}
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
+}
 
-  function scrollToVehicles() {
-    document.getElementById("vehicles").scrollIntoView({ behavior: "smooth" });
-  }
-
-  function callNumber(number) {
-    window.location.href = `tel:${number}`;
-  }
-
-  function emailNow(vehicle) {
-    const subject = `Booking Inquiry: ${vehicle}`;
-    const body = `Hello Advantium Confort Drive, I would like to inquire about booking the ${vehicle}.`;
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
-
-  // WhatsApp button
-  document.getElementById("whatsappBtn").href = 
-    `https://wa.me/${phonePrimary}?text=${encodeURIComponent("Hello Advantium Confort Drive, I would like to inquire about vehicle booking.")}`;
-
-  // Booking Form Modal
-  const modal = document.getElementById("bookingModal");
-  const form = document.getElementById("bookingForm");
-  const vehicleInput = document.getElementById("vehicleName");
-
-  function openBookingForm(vehicle) {
-    vehicleInput.value = vehicle;
-    modal.style.display = "block";
-    // Optional: connect to Google Forms
-    // form.action = `https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse?entry.123456=${encodeURIComponent(vehicle)}`;
-  }
-
-  function closeBookingForm() {
-    modal.style.display = "none";
-  }
-
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-
-  // Submit form redirects to WhatsApp as an example
-  form.onsubmit = function(e) {
-    e.preventDefault();
-    const message = `Hello Advantium Confort Drive, I would like to book the ${vehicleInput.value}. Name: ${form.customerName.value}, Email: ${form.customerEmail.value}, Phone: ${form.customerPhone.value}, Message: ${form.customerMessage.value}`;
-    window.open(`https://wa.me/${phonePrimary}?text=${encodeURIComponent(message)}`, "_blank");
-    modal.style.display = "none";
-  }
+document.getElementById("contactForm").onsubmit = function(e){
+  e.preventDefault();
+  const msg =
+    `Hello Advantium Confort Drive,%0A` +
+    `Name: ${name.value}%0A` +
+    `Phone: ${phone.value}%0A` +
+    `Message: ${message.value}`;
+  window.open(`https://wa.me/254722606631?text=${msg}`, "_blank");
+};
 </script>
 
 </body>
