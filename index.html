@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Advantium Confort Drive | Premium Safari & City Vehicle Rentals</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Advantium Confort Drive | Safari & Chauffeur Vehicle Rentals Nairobi</title>
+
+<meta name="description"
+content="Advantium Confort Drive offers premium safari vehicles, airport transfers, chauffeur services, and luxury transport across Kenya.">
 
 <style>
 /* ===== GLOBAL ===== */
@@ -11,10 +15,9 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff;
 }
 
-/* Responsive images */
+/* Faster image rendering */
 img {
   max-width: 100%;
   height: auto;
@@ -22,62 +25,73 @@ img {
 }
 
 /* ===== NAVBAR ===== */
+header { position: relative; }
+
 .navbar {
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 10;
+  z-index: 20;
+  display: flex;
+  align-items: center;
 }
-.navbar a {
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-links a {
   color: #fff;
-  margin-left: 15px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
 }
 
 /* ===== HERO ===== */
-.hero-section {
-  position: relative;
+.hero {
   height: 100vh;
+  position: relative;
   overflow: hidden;
 }
-.hero-section video {
+
+.hero video,
+.hero .fallback {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.hero-section::after {
+
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.45);
 }
 
-/* Logo */
-.logo-overlay {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  z-index: 5;
-}
-.logo-overlay img { height: 55px; }
-
-/* Hero text */
-.hero-text {
+.hero-content {
   position: absolute;
   inset: 0;
-  z-index: 4;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 20px;
 }
-.hero-text h1 { font-size: 36px; }
-.hero-text button {
+
+.hero h1 { font-size: 36px; }
+
+.hero button {
   padding: 12px 24px;
   border: none;
   background: #28a745;
@@ -87,31 +101,30 @@ img {
 
 /* ===== SECTIONS ===== */
 section {
-  padding: 60px 20px;
   max-width: 1000px;
   margin: auto;
+  padding: 60px 20px;
 }
 
 /* ===== SLIDER ===== */
 .slider {
-  position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 10px;
 }
+
 .slides {
   display: flex;
   width: 400%;
-  animation: slide 24s infinite;
+  animation: slide 26s infinite;
 }
+
 .slides img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   cursor: pointer;
 }
 
-/* Balanced animation */
 @keyframes slide {
   0%,20% { transform: translateX(0); }
   25%,45% { transform: translateX(-100%); }
@@ -119,13 +132,10 @@ section {
   75%,100% { transform: translateX(-300%); }
 }
 
-/* Disable animations if device requests it */
+/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .slides { animation: none; }
 }
-
-/* ===== VEHICLES ===== */
-.vehicle { margin-bottom: 20px; }
 
 /* ===== LIGHTBOX ===== */
 .lightbox {
@@ -137,125 +147,109 @@ section {
   align-items: center;
   z-index: 999;
 }
+
 .lightbox img {
   max-width: 90vw;
   max-height: 90vh;
 }
-.lightbox span {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 35px;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* ===== CONTACT ===== */
-form {
-  max-width: 500px;
-}
-input, textarea, button {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-button {
-  background: #28a745;
-  border: none;
-  color: white;
-}
 
 /* ===== MOBILE ===== */
-@media(max-width:768px){
-  .hero-text h1 { font-size: 26px; }
-  .navbar { top: 70px; }
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 220px;
+    background: #000;
+    flex-direction: column;
+    padding: 80px 20px;
+    transition: 0.3s;
+  }
+
+  .nav-links.active { right: 0; }
+
+  .hamburger { display: block; }
+
+  .hero h1 { font-size: 26px; }
 }
 </style>
 </head>
 
 <body>
 
-<header class="hero-section" id="home">
-  <div class="logo-overlay">
-    <img src="log4.png" alt="Logo">
-  </div>
+<header class="hero" id="home">
 
   <nav class="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#vehicles">Vehicles</a>
-    <a href="#contact">Contact</a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" onclick="toggleMenu()">Home</a>
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#vehicles" onclick="toggleMenu()">Vehicles</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
   </nav>
 
-  <!-- Mobile-safe video -->
-  <video autoplay muted loop playsinline poster="fallback.jpg">
+  <!-- Video loads ONLY on fast networks -->
+  <video id="heroVideo" autoplay muted loop playsinline>
     <source src="videos of Kenya.mp4" type="video/mp4">
   </video>
 
-  <div class="hero-text">
+  <!-- Fallback image -->
+  <img src="fallback.jpg" class="fallback" id="fallbackImg" alt="Kenya Safari Landscape">
+
+  <div class="hero-content">
     <h1>ADVANTIUM CONFORT DRIVE</h1>
-    <p>Comfort • Reliability • Premium Safari & City Drives</p>
-    <button onclick="document.getElementById('vehicles').scrollIntoView({behavior:'smooth'})">
-      See Vehicles
-    </button>
+    <p>Premium Safari & Chauffeur Services</p>
+    <button onclick="document.getElementById('vehicles').scrollIntoView()">See Vehicles</button>
   </div>
 </header>
 
 <section id="about">
-<h1>About Advantium Confort Drive</h1>
-<p>Premium vehicle rental company based in Nairobi, Kenya.</p>
+<h1>About Us</h1>
+<p>Premium chauffeur, safari, and corporate transport services across Kenya.</p>
 </section>
 
 <section id="vehicles">
-<h1>Our Vehicle Fleet</h1>
+<h1>Our Fleet</h1>
 
 <div class="slider">
   <div class="slides">
-    <img src="headsets.jpg" onclick="openLightbox(this.src)">
-    <img src="lion sleeping.png" onclick="openLightbox(this.src)">
-    <img src="confort benz.png" onclick="openLightbox(this.src)">
-    <img src="lion crossing.png" onclick="openLightbox(this.src)">
+    <img src="headsets.jpg" loading="lazy" alt="Safari tour vehicle">
+    <img src="lion sleeping.png" loading="lazy" alt="Kenya wildlife safari">
+    <img src="confort benz.png" loading="lazy" alt="Luxury Mercedes chauffeur car">
+    <img src="lion crossing.png" loading="lazy" alt="Safari adventure Kenya">
   </div>
 </div>
 </section>
 
 <section id="contact">
-<h1>Contact Us</h1>
-
-<form id="contactForm">
-  <input id="name" required placeholder="Your Name">
-  <input id="email" type="email" required placeholder="Your Email">
-  <input id="phone" required placeholder="Your Phone">
-  <textarea id="message" placeholder="Message"></textarea>
-  <button type="submit">Send Message</button>
-</form>
+<h1>Contact</h1>
+<p>📍 Nairobi, Kenya</p>
+<p>📞 +254 722 606631</p>
+<p>📧 advantiumlimited@gmail.com</p>
 </section>
 
-<div class="lightbox" id="lightbox">
-  <span onclick="closeLightbox()">×</span>
-  <img id="lightboxImg">
-</div>
-
 <script>
-function openLightbox(src){
-  lightbox.style.display = "flex";
-  lightboxImg.src = src;
-}
-function closeLightbox(){
-  lightbox.style.display = "none";
+/* Hamburger menu */
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
 }
 
-document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  const msg =
-    `Hello Advantium Confort Drive,%0A` +
-    `Name: ${name.value}%0A` +
-    `Phone: ${phone.value}%0A` +
-    `Message: ${message.value}`;
-  window.open(`https://wa.me/254722606631?text=${msg}`, "_blank");
-});
+/* Auto-disable video on slow networks */
+const video = document.getElementById("heroVideo");
+const fallback = document.getElementById("fallbackImg");
+
+if (navigator.connection &&
+   (navigator.connection.saveData ||
+    navigator.connection.effectiveType.includes("2g") ||
+    navigator.connection.effectiveType.includes("3g"))) {
+
+  video.remove();
+  fallback.style.display = "block";
+} else {
+  fallback.style.display = "none";
+}
 </script>
 
 </body>
-</html>
