@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Advantium Confort Drive | Premium Safari & City Vehicle Rentals</title>
 
 <style>
@@ -11,9 +11,10 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: #fff;
 }
 
-/* Make all images responsive */
+/* Responsive images */
 img {
   max-width: 100%;
   height: auto;
@@ -24,16 +25,16 @@ img {
 .navbar {
   position: absolute;
   top: 20px;
-  right: 30px;
+  right: 20px;
   z-index: 10;
 }
 .navbar a {
   color: #fff;
-  margin-left: 18px;
+  margin-left: 15px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 14px;
 }
-.navbar a:hover { text-decoration: underline; }
 
 /* ===== HERO ===== */
 .hero-section {
@@ -46,30 +47,38 @@ img {
   height: 100%;
   object-fit: cover;
 }
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+/* Logo */
 .logo-overlay {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
   z-index: 5;
 }
-.logo-overlay img {
-  height: 60px;
-}
+.logo-overlay img { height: 55px; }
+
+/* Hero text */
 .hero-text {
   position: absolute;
   inset: 0;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #fff;
-  background: rgba(0,0,0,0.4);
   text-align: center;
   padding: 20px;
 }
-.hero-text h1 { font-size: 40px; }
+.hero-text h1 { font-size: 36px; }
 .hero-text button {
-  padding: 12px 25px;
+  padding: 12px 24px;
   border: none;
   background: #28a745;
   color: white;
@@ -89,13 +98,11 @@ section {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 10px;
-  margin: 25px 0;
 }
 .slides {
   display: flex;
   width: 400%;
-  height: 100%;
-  animation: slide 16s infinite;
+  animation: slide 24s infinite;
 }
 .slides img {
   width: 100%;
@@ -104,15 +111,21 @@ section {
   cursor: pointer;
 }
 
+/* Balanced animation */
 @keyframes slide {
-  0% { margin-left: 0; }
-  25% { margin-left: -100%; }
-  50% { margin-left: -200%; }
-  75% { margin-left: -300%; }
+  0%,20% { transform: translateX(0); }
+  25%,45% { transform: translateX(-100%); }
+  50%,70% { transform: translateX(-200%); }
+  75%,100% { transform: translateX(-300%); }
+}
+
+/* Disable animations if device requests it */
+@media (prefers-reduced-motion: reduce) {
+  .slides { animation: none; }
 }
 
 /* ===== VEHICLES ===== */
-.vehicle { margin-bottom: 25px; }
+.vehicle { margin-bottom: 20px; }
 
 /* ===== LIGHTBOX ===== */
 .lightbox {
@@ -127,18 +140,17 @@ section {
 .lightbox img {
   max-width: 90vw;
   max-height: 90vh;
-  object-fit: contain;
 }
 .lightbox span {
   position: absolute;
   top: 20px;
-  right: 30px;
+  right: 25px;
   font-size: 35px;
-  color: white;
+  color: #fff;
   cursor: pointer;
 }
 
-/* ===== CONTACT FORM ===== */
+/* ===== CONTACT ===== */
 form {
   max-width: 500px;
 }
@@ -146,30 +158,24 @@ input, textarea, button {
   width: 100%;
   padding: 12px;
   margin-bottom: 10px;
+  font-size: 14px;
 }
 button {
   background: #28a745;
   border: none;
   color: white;
-  cursor: pointer;
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  .navbar {
-    top: 70px;
-    right: 20px;
-  }
-  .hero-text h1 {
-    font-size: 28px;
-  }
+  .hero-text h1 { font-size: 26px; }
+  .navbar { top: 70px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== HERO ===== -->
 <header class="hero-section" id="home">
   <div class="logo-overlay">
     <img src="log4.png" alt="Logo">
@@ -182,51 +188,25 @@ button {
     <a href="#contact">Contact</a>
   </nav>
 
-  <video autoplay muted loop>
+  <!-- Mobile-safe video -->
+  <video autoplay muted loop playsinline poster="fallback.jpg">
     <source src="videos of Kenya.mp4" type="video/mp4">
   </video>
 
   <div class="hero-text">
     <h1>ADVANTIUM CONFORT DRIVE</h1>
     <p>Comfort • Reliability • Premium Safari & City Drives</p>
-    <button onclick="document.getElementById('vehicles').scrollIntoView()">See Vehicles</button>
+    <button onclick="document.getElementById('vehicles').scrollIntoView({behavior:'smooth'})">
+      See Vehicles
+    </button>
   </div>
 </header>
 
-<!-- ===== ABOUT ===== -->
 <section id="about">
 <h1>About Advantium Confort Drive</h1>
 <p>Premium vehicle rental company based in Nairobi, Kenya.</p>
-
-<h2>Why Choose Us?</h2>
-<ul>
-  <li>Professional & experienced drivers</li>
-  <p>Executive Chauffeur Services</p>
-  <p>Professional, well-trained drivers offering discreet and comfortable chauffeur services for executives, diplomats, and VIP clients.</p>
-
-  <p>Airport Transfers</p>
-  <p>Reliable pick-up and drop-off services to and from Jomo Kenyatta International Airport and Wilson Airport, ensuring punctuality and comfort.</p>
-
-  <li>Safari-ready 4x4 vehicles</li>
-
-  <p>Corporate Transport Solutions</p>
-  <p>Tailored transport services for companies, including staff transportation, business meetings, conferences, and corporate events.</p>
-
-  <p>Tour & Travel Drive Services</p>
-  <p>Comfortable transport for city tours, safari transfers, and long-distance travel across Kenya.</p>
-
-  <p>Event & Wedding Transportation</p>
-  <p>Elegant and well-maintained vehicles for weddings and special occasions.</p>
-
-  <p>Courier & Light Logistics (Optional)</p>
-  <p>Safe and timely delivery of documents and small parcels.</p>
-
-  <li>Affordable & transparent pricing</li>
-  <li>24/7 customer support</li>
-</ul>
 </section>
 
-<!-- ===== VEHICLES ===== -->
 <section id="vehicles">
 <h1>Our Vehicle Fleet</h1>
 
@@ -238,48 +218,20 @@ button {
     <img src="lion crossing.png" onclick="openLightbox(this.src)">
   </div>
 </div>
-
-<div class="vehicle">
-<h3>Safari Tour Van</h3>
-<p>Perfect for group safaris and tours.</p>
-</div>
-
-<div class="vehicle">
-<h3>Land Cruiser V8</h3>
-<p>Luxury and power for rugged terrain.</p>
-</div>
-
-<div class="vehicle">
-<h3>Toyota Rav4</h3>
-<p>Reliable for city and highway travel.</p>
-</div>
-
-<div class="vehicle">
-<h3>Land Rover Defender</h3>
-<p>Built for deep off-road adventures.</p>
-</div>
 </section>
 
-<!-- ===== CONTACT ===== -->
 <section id="contact">
 <h1>Contact Us</h1>
-<p>📍 Nairobi, Kenya</p>
-<p>📞 +254 722 606631 / +254791753995</p>
-<p>📧 advantiumlimited@gmail.com</p>
 
 <form id="contactForm">
-  <input id="name" placeholder="Your Name" required>
-  <input id="email" type="email" placeholder="Your Email" required>
-  <input id="phone" placeholder="Your Phone" required>
+  <input id="name" required placeholder="Your Name">
+  <input id="email" type="email" required placeholder="Your Email">
+  <input id="phone" required placeholder="Your Phone">
   <textarea id="message" placeholder="Message"></textarea>
   <button type="submit">Send Message</button>
 </form>
-
-<iframe src="https://www.google.com/maps?q=Nairobi,Kenya&output=embed"
-width="100%" height="300" style="border:0;"></iframe>
 </section>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <span onclick="closeLightbox()">×</span>
   <img id="lightboxImg">
@@ -287,14 +239,14 @@ width="100%" height="300" style="border:0;"></iframe>
 
 <script>
 function openLightbox(src){
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightboxImg").src = src;
+  lightbox.style.display = "flex";
+  lightboxImg.src = src;
 }
 function closeLightbox(){
-  document.getElementById("lightbox").style.display = "none";
+  lightbox.style.display = "none";
 }
 
-document.getElementById("contactForm").onsubmit = function(e){
+document.getElementById("contactForm").addEventListener("submit", function(e){
   e.preventDefault();
   const msg =
     `Hello Advantium Confort Drive,%0A` +
@@ -302,10 +254,8 @@ document.getElementById("contactForm").onsubmit = function(e){
     `Phone: ${phone.value}%0A` +
     `Message: ${message.value}`;
   window.open(`https://wa.me/254722606631?text=${msg}`, "_blank");
-};
+});
 </script>
 
 </body>
-</html> 
-
-  
+</html>
