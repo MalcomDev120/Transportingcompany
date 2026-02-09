@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advantium Confort Drive | Premium Safari & City Vehicle Rentals</title>
+<title>Advantium Comfort Drive | Premium Safari & City Vehicle Rentals</title>
 
 <style>
 /* ===== GLOBAL ===== */
@@ -68,6 +68,7 @@ img {
   padding: 20px;
 }
 .hero-text h1 { font-size: 40px; }
+.hero-text h2 { font-size: 28px; margin: 10px 0; color: #28a745; font-weight: bold; }
 .hero-text button {
   padding: 12px 25px;
   border: none;
@@ -81,6 +82,12 @@ section {
   padding: 60px 20px;
   max-width: 1000px;
   margin: auto;
+}
+section h2.arabic {
+  color: #28a745; /* Matching button color */
+  font-weight: bold;
+  font-size: 24px;
+  margin: 10px 0 20px 0;
 }
 
 /* ===== SLIDER ===== */
@@ -163,6 +170,12 @@ button {
   .hero-text h1 {
     font-size: 28px;
   }
+  .hero-text h2 {
+    font-size: 22px;
+  }
+  section h2.arabic {
+    font-size: 20px;
+  }
 }
 </style>
 </head>
@@ -187,82 +200,110 @@ button {
   </video>
 
   <div class="hero-text">
-    <h1>ADVANTIUM CONFORT DRIVE</h1>
+    <h1>ADVANTIUM COMFORT DRIVE</h1>
     <p>Comfort • Reliability • Premium Safari & City Drives</p>
+    <h2 class="arabic">رحلة فاخرة • مريحة</h2> <!-- Arabic Double Word -->
     <button onclick="document.getElementById('vehicles').scrollIntoView()">See Vehicles</button>
   </div>
 </header>
 
 <!-- ===== ABOUT ===== -->
 <section id="about">
-<h1>About Advantium Confort Drive</h1>
-<p>Premium vehicle rental company based in Nairobi, Kenya.</p>
-
-<h2>Why Choose Us?</h2>
-<ul>
-  <li>Professional & experienced drivers</li>
-  <p>Executive Chauffeur Services</p>
-  <p>Professional, well-trained drivers offering discreet and comfortable chauffeur services for executives, diplomats, and VIP clients.</p>
-
-  <p>Airport Transfers</p>
-  <p>Reliable pick-up and drop-off services to and from Jomo Kenyatta International Airport and Wilson Airport, ensuring punctuality and comfort.</p>
-
-  <li>Safari-ready 4x4 vehicles</li>
-
-  <p>Corporate Transport Solutions</p>
-  <p>Tailored transport services for companies, including staff transportation, business meetings, conferences, and corporate events.</p>
-
-  <p>Tour & Travel Drive Services</p>
-  <p>Comfortable transport for city tours, safari transfers, and long-distance travel across Kenya.</p>
-
-  <p>Event & Wedding Transportation</p>
-  <p>Elegant and well-maintained vehicles for weddings and special occasions.</p>
-
-  <p>Courier & Light Logistics (Optional)</p>
-  <p>Safe and timely delivery of documents and small parcels.</p>
-
-  <li>Affordable & transparent pricing</li>
-  <li>24/7 customer support</li>
-</ul>
-</section>
-
-<!-- ===== VEHICLES ===== -->
-<section id="vehicles">
-<h1>Our Vehicle Fleet</h1>
-
-<div class="slider">
-  <div class="slides">
-    <img src="4.png" onclick="openLightbox(this.src)">
-    <img src="2.png" onclick="openLightbox(this.src)">
-    <img src="3.png" onclick="openLightbox(this.src)">
-    <img src="1.png" onclick="openLightbox(this.src)">
+  <h1>About Advantium Comfort Drive</h1>
+  <h2 class="arabic">مهنية • موثوقة</h2>
+  <p>Advantium Comfort Drive is Nairobi’s premier vehicle rental and chauffeur service, offering luxury, comfort, and reliability for every journey.</p>
+  
+  <h2>Why Choose Us?</h2>
+  <h3 class="arabic">راحة • أمان</h3>
+  <ul>
+    <li>
+      <strong>Professional & Experienced Drivers</strong>
+      <p>Our well-trained, discreet drivers provide executive chauffeur services for diplomats, VIPs, and business leaders, ensuring every ride is safe, comfortable, and stress-free.</p>
+      <p class="arabic">سائقون محترفون وذوو خبرة: يقدم سائقونا المدربون واللبقون خدمات قيادة تنفيذية للدبلوماسيين وكبار الشخصيات وقادة الأعمال، لضمان أن تكون كل رحلة آمنة ومريحة وخالية من التوتر.</p>
+    </li>
+    <li>
+      <strong>Airport Transfers</strong>
+      <p>Reliable and punctual pick-ups and drop-offs to and from Jomo Kenyatta International Airport and Wilson Airport, making every travel experience seamless.</p>
+      <p class="arabic">خدمات النقل من وإلى المطار: نقدم خدمات نقل موثوقة وفي الوقت المحدد من وإلى مطار جومو كينياتا الدولي ومطار ويلسون، لجعل تجربة السفر الخاصة بك سلسة ومريحة.</p>
+    </li>
+    <li>
+      <strong>Safari-Ready 4x4 Vehicles</strong>
+      <p>Explore Kenya’s beautiful landscapes in comfort and style with our fully equipped 4x4 vehicles, perfect for safaris and long-distance travel.</p>
+      <p class="arabic">مركبات 4x4 جاهزة للرحلات السفاري: استمتع باستكشاف المناظر الطبيعية الجميلة في كينيا براحة وأسلوب مع مركباتنا المجهزة بالكامل، المثالية للرحلات السفاري والتنقل لمسافات طويلة.</p>
+    </li>
+    <li>
+      <strong>Corporate Transport Solutions</strong>
+      <p>Customized transport services for companies, including staff shuttles, business meetings, conferences, and corporate events, designed to meet your professional needs.</p>
+      <p class="arabic">حلول النقل للشركات: خدمات نقل مخصصة للشركات، بما في ذلك تنقل الموظفين، والاجتماعات التجارية، والمؤتمرات، والفعاليات، مصممة لتلبية احتياجاتكم المهنية.</p>
+    </li>
+    <li>
+      <strong>Tour & Travel Services</strong>
+      <p>Experience Kenya hassle-free with our comfortable transport options for city tours, safari transfers, and long-distance journeys across the country.</p>
+      <p class="arabic">خدمات الجولات والسفر: استمتع بتجربة كينيا بدون متاعب مع خيارات النقل المريحة لدينا للجولات في المدينة، ونقل الرحلات السفاري، والتنقل لمسافات طويلة عبر البلاد.</p>
+    </li>
+    <li>
+      <strong>Event & Wedding Transportation</strong>
+      <p>Arrive in elegance with our fleet of pristine vehicles for weddings, parties, and special occasions, making every event unforgettable.</p>
+      <p class="arabic">خدمات النقل للفعاليات وحفلات الزفاف: وصل بأناقة مع أسطولنا من المركبات الفاخرة للزفاف والحفلات والمناسبات الخاصة، لجعل كل حدث لا يُنسى.</p>
+    </li>
+    <li>
+      <strong>Courier & Light Logistics (Optional)</strong>
+      <p>Fast, secure, and reliable delivery of documents and small parcels whenever you need them.</p>
+      <p class="arabic">خدمات البريد واللوجستيات الخفيفة (اختياري): توصيل سريع وآمن وموثوق للوثائق والطرد الصغير متى احتجت إليه.</p>
+    </li>
+    <li>
+      <strong>Affordable & Transparent Pricing</strong>
+      <p class="arabic">أسعار معقولة وشفافة</p>
+    </li>
+    <li>
+      <strong>24/7 Customer Support</strong>
+      <p class="arabic">دعم العملاء على مدار الساعة</p>
+    </li>
+  </ul>
+  
+  <!-- ===== VEHICLES ===== -->
+  <section id="vehicles">
+  <h1>Our Vehicle Fleet</h1>
+  <h2 class="arabic">مركبات • متميزة</h2>
+  
+  <div class="slider">
+    <div class="slides">
+      <img src="113.png" onclick="openLightbox(this.src)">
+      <img src="112.png" onclick="openLightbox(this.src)">
+      <img src="111.png" onclick="openLightbox(this.src)">
+      <img src="114.png" onclick="openLightbox(this.src)">
+    </div>
   </div>
-</div>
-
-<div class="vehicle">
-<h3>Safari Tour Van</h3>
-<p>Perfect for group safaris and tours.</p>
-</div>
-
-<div class="vehicle">
-<h3>Land Cruiser VEHICLES</h3>
-<p>Luxury and power for rugged terrain.</p>
-</div>
-
-<div class="vehicle">
-<h3>CONFORTABLE CARS</h3>
-<p>Reliable for city and highway travel.</p>
-</div>
-
-<div class="vehicle">
-<h3>BOTH BUSES and MIN BUSES </h3>
-<p>Built for deep off-road adventures.</p>
-</div>
-</section>
+  
+  <div class="vehicle">
+  <h3>Safari Tour Van</h3>
+  <p>Perfect for group safaris and tours.</p>
+  <p class="arabic">ميني فان للرحلات السفاري: مثالية للرحلات الجماعية والجولات.</p>
+  </div>
+  
+  <div class="vehicle">
+  <h3>Land Cruiser VEHICLES</h3>
+  <p>Luxury and power for rugged terrain.</p>
+  <p class="arabic">مركبات لاند كروزر: تجمع بين الفخامة والقوة للتضاريس الوعرة.</p>
+  </div>
+  
+  <div class="vehicle">
+  <h3>COMFORTABLE CARS</h3>
+  <p>Reliable for city and highway travel.</p>
+  <p class="arabic">سيارات مريحة: موثوقة للسفر في المدينة وعلى الطرق السريعة.</p>
+  </div>
+  
+  <div class="vehicle">
+  <h3>BOTH BUSES and MIN BUSES </h3>
+  <p>Built for deep off-road adventures.</p>
+  <p class="arabic">الحافلات والحافلات الصغيرة: مصممة للمغامرات في الطرق الوعرة.</p>
+  </div>
+  </section>
 
 <!-- ===== CONTACT ===== -->
 <section id="contact">
 <h1>Contact Us</h1>
+<h2 class="arabic">تواصل • استفسار</h2>
 <p>📍 Nairobi, Kenya</p>
 <p>📞 +254 722 606631 / +254791753995</p>
 <p>📧 advantiumlimited@gmail.com</p>
